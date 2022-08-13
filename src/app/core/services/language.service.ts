@@ -62,7 +62,6 @@ export class LanguageService {
       this.langs[lang]?.i18n || this.langs[this.default].i18n
     );
     this.current = this.translate.currentLang;
-    console.log(lang, this.current);
   }
 
   getLangs() {

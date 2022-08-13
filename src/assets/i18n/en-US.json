@@ -1,5 +1,18 @@
 {
   "page": {
     "home": "Home"
+  },
+  "problem-type": {
+    "hash-table": "Hash Table"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "problem": {
+    "1": {
+      "title": "Two Sum"
+    }
   }
 }

@@ -1,0 +1,40 @@
+<ul
+    nz-menu
+    nzTheme="dark"
+    nzMode="inline"
+>
+    <li
+        nz-menu-item
+        nzMatchRouter
+        nzMatchRouterExact="true"
+    >
+        <a [routerLink]="['/']">
+            <i
+                nz-icon
+                nzType="home"
+                nzTheme="outline"
+            ></i>
+            <span>{{'page.home' | translate}}</span>
+        </a>
+    </li>
+    <li
+        *ngFor="let item of data"
+        nz-submenu
+        [nzTitle]="'problem-type.' + item.title | translate"
+        [nzIcon]="item.icon"
+        [nzOpen]="open(item.submenu)"
+    >
+        <ul>
+            <li
+                nz-menu-item
+                *ngFor="let sub of item.submenu"
+                nzMatchRouter
+            >
+                <a [routerLink]="sub.route">
+                    <span class="pr">{{sub.number }}.</span>
+                    <span>{{ sub.title | translate}}</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>

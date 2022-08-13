@@ -3,7 +3,7 @@ import {
   TranslateLoader,
   TranslateService,
 } from '@ngx-translate/core';
-import { I18nModule } from '@features/i18n/i18n.module';
+import { I18nModule } from '@shared/i18n/i18n.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageService } from '@core/services';
-import { map } from 'rxjs/operators';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/home/', '.json');

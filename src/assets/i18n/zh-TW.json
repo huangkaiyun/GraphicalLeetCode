@@ -1,5 +1,18 @@
 {
   "page": {
     "home": "首頁"
+  },
+  "problem-type": {
+    "hash-table": "哈希表"
+  },
+  "difficulty": {
+    "easy": "簡單",
+    "medium": "中等",
+    "hard": "困難"
+  },
+  "problem": {
+    "1": {
+      "title": "兩數之和"
+    }
   }
 }
