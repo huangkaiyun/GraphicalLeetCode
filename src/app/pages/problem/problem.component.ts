@@ -1,6 +1,6 @@
 import { ProblemsService } from '@core/services';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Problem } from '@core/types';
 
 @Component({
@@ -9,7 +9,7 @@ import { Problem } from '@core/types';
   styleUrls: ['./problem.component.less'],
 })
 export class ProblemComponent implements OnInit {
-  problem!: Problem;
+  problem?: Problem;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,6 +18,6 @@ export class ProblemComponent implements OnInit {
 
   ngOnInit(): void {
     const problemId = this.route.snapshot.paramMap.get('id');
-    this.problem = this.problemsService.getById(Number(problemId))!;
+    this.problem = this.problemsService.getById(Number(problemId));
   }
 }

@@ -1,3 +1,5 @@
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuComponent } from './menu.component';
@@ -8,9 +10,9 @@ describe('MenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuComponent ]
-    })
-    .compileComponents();
+      declarations: [MenuComponent],
+      imports: [TranslateModule.forRoot()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;

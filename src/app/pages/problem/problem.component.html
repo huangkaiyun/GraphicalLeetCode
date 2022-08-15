@@ -1,5 +1,8 @@
-<h1>
-    <span>{{problem.id}}.</span>
-    {{ 'problem.' + problem.id +'.title'  | translate }}
-</h1>
-<app-difficulty [difficulty]="problem.difficulty"></app-difficulty>
+*ngIf="expression"
+<ng-container *ngIf="problem">
+    <h1>
+        <span>{{problem.id}}.</span>
+        {{ 'problem.' + problem.id +'.title'  | translate }}
+    </h1>
+    <app-difficulty [difficulty]="problem.difficulty"></app-difficulty>
+</ng-container>

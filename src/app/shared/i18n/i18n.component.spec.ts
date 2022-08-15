@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { I18nComponent } from './i18n.component';
@@ -8,9 +9,9 @@ describe('I18nComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ I18nComponent ]
-    })
-    .compileComponents();
+      declarations: [I18nComponent],
+      imports: [TranslateModule.forRoot()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(I18nComponent);
     component = fixture.componentInstance;

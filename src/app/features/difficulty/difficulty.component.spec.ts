@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DifficultyComponent } from './difficulty.component';
@@ -8,9 +9,9 @@ describe('DifficultyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DifficultyComponent ]
-    })
-    .compileComponents();
+      declarations: [DifficultyComponent],
+      imports: [TranslateModule.forRoot()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DifficultyComponent);
     component = fixture.componentInstance;
