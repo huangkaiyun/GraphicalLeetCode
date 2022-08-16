@@ -1,7 +1,25 @@
 <ng-container *ngIf="problem">
+  <nz-breadcrumb>
+    <nz-breadcrumb-item>
+      <i nz-icon nzType="home" [routerLink]="['/']"></i>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <span>{{ problem.id }}.</span>
+      {{ "problem." + problem.id + ".title" | translate }}
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+
   <h1>
     <span>{{ problem.id }}.</span>
     {{ "problem." + problem.id + ".title" | translate }}
   </h1>
   <app-difficulty [difficulty]="problem.difficulty"></app-difficulty>
+  <p class="description">
+    {{ "problem." + problem.id + ".description" | translate }}
+  </p>
+  {{ problem | json }}
 </ng-container>
+<nz-code-editor
+  [ngModel]="code"
+  [nzEditorOption]="{ language: 'typescript' }"
+></nz-code-editor>

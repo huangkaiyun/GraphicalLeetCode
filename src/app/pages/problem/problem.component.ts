@@ -10,6 +10,9 @@ import { Problem } from '@core/types';
 })
 export class ProblemComponent implements OnInit {
   problem?: Problem;
+  type?: { label: string; icon: string };
+  editorOptions = { theme: 'vs', language: 'typescript' };
+  code: string = 'function x() {\nconsole.log("Hello world!");\n}';
 
   constructor(
     private route: ActivatedRoute,
@@ -19,5 +22,10 @@ export class ProblemComponent implements OnInit {
   ngOnInit(): void {
     const problemId = this.route.snapshot.paramMap.get('id');
     this.problem = this.problemsService.getById(Number(problemId));
+    if (this.problem) {
+      this.type = this.problemsService.types.find(
+        ({ label }) => label == this.problem?.type
+      );
+    }
   }
 }
