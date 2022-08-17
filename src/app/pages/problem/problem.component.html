@@ -8,18 +8,42 @@
       {{ "problem." + problem.id + ".title" | translate }}
     </nz-breadcrumb-item>
   </nz-breadcrumb>
+  <div nz-row [nzAlign]="'middle'" [nzGutter]="32">
+    <div nz-col>
+      <h1>
+        <span>{{ problem.id }}.</span>
+        {{ "problem." + problem.id + ".title" | translate }}
+      </h1>
+    </div>
+    <app-difficulty col [difficulty]="problem.difficulty"></app-difficulty>
+  </div>
 
-  <h1>
-    <span>{{ problem.id }}.</span>
-    {{ "problem." + problem.id + ".title" | translate }}
-  </h1>
-  <app-difficulty [difficulty]="problem.difficulty"></app-difficulty>
-  <p class="description">
-    {{ "problem." + problem.id + ".description" | translate }}
-  </p>
-  {{ problem | json }}
+  <div nz-row class="content" [nzGutter]="32">
+    <div nz-col [nzSpan]="12">
+      <app-leetcode-link [link]="problem.leetcode"></app-leetcode-link>
+      <p class="description">
+        {{ "problem." + problem.id + ".description" | translate }}
+      </p>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <nz-select
+        [(ngModel)]="selected"
+        class="lang-select"
+        (ngModelChange)="onLangChang($event)"
+      >
+        <nz-option
+          *ngFor="let language of languages"
+          [nzValue]="language"
+          [nzLabel]="language"
+        ></nz-option>
+      </nz-select>
+      <nz-code-editor
+        class="editor"
+        [nzFullControl]="true"
+        [ngModel]="problem.solutions[selected]"
+        [nzEditorOption]="editorOption"
+        (nzEditorInitialized)="onEditorInit($event)"
+      ></nz-code-editor>
+    </div>
+  </div>
 </ng-container>
-<nz-code-editor
-  [ngModel]="code"
-  [nzEditorOption]="{ language: 'typescript' }"
-></nz-code-editor>
