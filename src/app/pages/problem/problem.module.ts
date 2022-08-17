@@ -20,6 +20,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
     CommonModule,
     RouterModule.forChild([
       { path: ':id', component: ProblemComponent, canActivate: [ProblemGuard] },
+      { path: '**', redirectTo: '/' },
     ]),
     I18nModule,
     TranslateModule,
