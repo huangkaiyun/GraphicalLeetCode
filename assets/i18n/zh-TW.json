@@ -3,7 +3,7 @@
     "home": "首頁"
   },
   "problem-type": {
-    "hash-table": "哈希表"
+    "hash-table": "雜湊表"
   },
   "difficulty": {
     "easy": "簡單",
@@ -12,7 +12,8 @@
   },
   "problem": {
     "1": {
-      "title": "兩數之和"
+      "title": "兩數之和",
+      "description": "給一組整數陣列nums和一目標值target，請找出陣列中目標值為哪兩個整數之和，並回傳其位置。\n你可以假設每個目標只會對應一個答案。但是，不能重複利用同一元素。\n你可以按照任意順序回傳答案。"
     }
   }
 }
