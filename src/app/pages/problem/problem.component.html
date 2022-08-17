@@ -19,13 +19,13 @@
   </div>
 
   <div nz-row class="content" [nzGutter]="32">
-    <div nz-col [nzSpan]="12">
+    <div nz-col [nzSpan]="24" [nzSm]="12">
       <app-leetcode-link [link]="problem.leetcode"></app-leetcode-link>
       <p class="description">
         {{ "problem." + problem.id + ".description" | translate }}
       </p>
     </div>
-    <div nz-col [nzSpan]="12">
+    <div nz-col [nzSpan]="24" [nzSm]="12">
       <nz-select
         [(ngModel)]="selected"
         class="lang-select"
