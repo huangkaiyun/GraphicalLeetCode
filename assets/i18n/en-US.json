@@ -3,7 +3,8 @@
     "home": "Home"
   },
   "problem-type": {
-    "hash-table": "Hash Table"
+    "hash-table": "Hash Table",
+    "math": "Math"
   },
   "difficulty": {
     "easy": "Easy",
@@ -14,6 +15,10 @@
     "1": {
       "title": "Two Sum",
       "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\nYou can return the answer in any order."
+    },
+    "9": {
+      "title": "Palindrome Number",
+      "description": "Given an integer x, return true if x is palindrome integer.\nAn integer is a palindrome when it reads the same backward as forward."
     }
   }
 }
