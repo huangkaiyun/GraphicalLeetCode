@@ -45,13 +45,16 @@ export class ProblemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const problemId = this.route.snapshot.paramMap.get('id');
-    this.problem = this.problemsService.getById(Number(problemId));
-    if (this.problem) {
-      this.type = this.problemsService.types.find(
-        ({ label }) => label == this.problem?.type
-      );
-      this.languages = Object.keys(this.problem.solutions) as CodeLanguage[];
-    }
+    this.route.params.subscribe(({ id }) => {
+      const problemId = id;
+      this.problem = this.problemsService.getById(Number(problemId));
+      if (this.problem) {
+        this.type = this.problemsService.types.find(
+          ({ label }) => label == this.problem?.type
+        );
+        this.languages = Object.keys(this.problem.solutions) as CodeLanguage[];
+        this.onLangChang(this.selected);
+      }
+    });
   }
 }

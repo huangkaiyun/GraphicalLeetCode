@@ -9,6 +9,7 @@ export class ProblemsService {
   all: Problem[] = ProblemList;
   types: { label: ProblemType; icon: string }[] = [
     { label: 'hash-table', icon: 'table' },
+    { label: 'math', icon: 'number' },
   ];
 
   getById(id: number) {
