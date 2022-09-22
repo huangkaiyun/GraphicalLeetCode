@@ -5,6 +5,20 @@ export const problem1: Problem = {
   leetcode: 'https://leetcode.com/problems/two-sum/',
   difficulty: 'easy',
   type: 'hash-table',
+  examples: [
+    {
+      input: [[2, 7, 11, 15], 9],
+      output: [0, 1],
+    },
+    {
+      input: [[3, 2, 4], 6],
+      output: [1, 2],
+    },
+    {
+      input: [[3, 3], 6],
+      output: [0, 1],
+    },
+  ],
   solutions: {
     'c#': `public class Solution {
     public int[] TwoSum(int[] nums, int target) {

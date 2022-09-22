@@ -24,7 +24,33 @@
       <p class="description">
         {{ "problem." + problem.id + ".description" | translate }}
       </p>
+      <nz-radio-group
+        [(ngModel)]="example"
+        nzButtonStyle="solid"
+        (ngModelChange)="onExampleChange($event)"
+      >
+        <label
+          nz-radio-button
+          *ngFor="let ex of problem.examples; let index = index"
+          [nzValue]="ex"
+          >{{ ("example" | translate) + (index + 1) }}</label
+        >
+      </nz-radio-group>
+      <!-- <textarea rows="2" nz-input [(ngModel)]="inputValue"></textarea> -->
+      <div *ngIf="!!example" class="example-block">
+        <div>
+          <strong>Input:</strong>
+          <span *ngFor="let params of example.input; let last = last"
+            >{{ params | json }}{{ last ? "" : " ,  " }}</span
+          >
+        </div>
+        <div>
+          <strong>Output:</strong>
+          <span>{{ example.output | json }}</span>
+        </div>
+      </div>
     </div>
+
     <div nz-col [nzSpan]="24" [nzSm]="12">
       <nz-select
         [(ngModel)]="selected"

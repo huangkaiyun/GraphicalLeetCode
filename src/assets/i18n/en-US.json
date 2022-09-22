@@ -20,5 +20,7 @@
       "title": "Palindrome Number",
       "description": "Given an integer x, return true if x is palindrome integer.\nAn integer is a palindrome when it reads the same backward as forward."
     }
-  }
+  },
+  "example": "Example",
+  "customized": "Customized"
 }

@@ -1,3 +1,4 @@
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { DifficultyModule } from '@features/difficulty/difficulty.module';
@@ -13,6 +14,8 @@ import { NzCodeEditorModule } from 'ng-zorro-antd/code-editor';
 import { FormsModule } from '@angular/forms';
 import { LeetcodeLinkModule } from '@features/leetcode-link/leetcode-link.module';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 @NgModule({
   declarations: [ProblemComponent],
@@ -32,6 +35,9 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
     NzGridModule,
     LeetcodeLinkModule,
     NzSelectModule,
+    NzButtonModule,
+    NzInputModule,
+    NzRadioModule,
   ],
   exports: [RouterModule],
 })

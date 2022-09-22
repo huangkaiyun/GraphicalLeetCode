@@ -4,6 +4,7 @@ export type Problem = {
   difficulty: Difficulty;
   type: ProblemType;
   solutions: Record<CodeLanguage, string>;
+  examples: { input: any; output: any }[];
 };
 
 export type ProblemType = 'hash-table' | 'math';
