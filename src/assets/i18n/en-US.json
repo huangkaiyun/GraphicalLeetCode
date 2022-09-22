@@ -19,6 +19,10 @@
     "9": {
       "title": "Palindrome Number",
       "description": "Given an integer x, return true if x is palindrome integer.\nAn integer is a palindrome when it reads the same backward as forward."
+    },
+    "13": {
+      "title": "Roman to Integer",
+      "description": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M."
     }
   },
   "example": "Example",

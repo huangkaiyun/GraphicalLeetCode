@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export abstract class BaseGraphicComponent {
   @Input() data?: any[];
 
-  result: boolean | undefined = undefined;
+  result: any = undefined;
 
   get hasResult() {
     return this.result !== undefined;
