@@ -1,3 +1,4 @@
+import { Graphic1 } from '@core/graphics';
 import { Problem } from '@core/types';
 
 export const problem1: Problem = {
@@ -64,4 +65,5 @@ export const problem1: Problem = {
 }
 `,
   },
+  component: Graphic1,
 };

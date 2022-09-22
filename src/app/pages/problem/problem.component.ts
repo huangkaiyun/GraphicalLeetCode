@@ -1,9 +1,16 @@
 import { CodeLanguage } from '@core/types/problem';
 import { ProblemsService } from '@core/services';
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Problem } from '@core/types';
 import { editor } from 'monaco-editor';
+import { GraphicDirective } from '@features/graphic/graphic.directive';
 
 declare const monaco: any;
 
@@ -22,9 +29,12 @@ export class ProblemComponent implements OnInit {
   inputValue: string = '';
   example?: { input: any; output: any };
 
+  @ViewChild('graphic') graphic: TemplateRef<GraphicDirective> | undefined;
+
   constructor(
     private route: ActivatedRoute,
-    private problemsService: ProblemsService
+    private problemsService: ProblemsService,
+    private viewContainerRef: ViewContainerRef
   ) {}
 
   get editorOption() {
@@ -46,11 +56,38 @@ export class ProblemComponent implements OnInit {
     this.onLangChang(this.selected);
   }
 
-  onExampleChange(example: { input: any; output: any }) {
-    this.example = example;
-    if (Array.isArray(example.input))
-      this.inputValue = example.input.join('\r\n');
-    else this.inputValue = example.input;
+  onExampleChange(example?: { input: any; output: any }) {
+    if (example) {
+      this.example = example;
+    }
+  }
+
+  customize() {
+    if (this.valid())
+      this.example = {
+        input: this.inputValue.split('\r\n').map((data) => this.parse(data)),
+        output: undefined,
+      };
+    else {
+      // TODO:
+      alert('format error');
+    }
+  }
+
+  parse(data: string) {
+    if (!isNaN(Number(data))) return Number(data);
+    if (data.startsWith('[') && data.endsWith(']')) return JSON.parse(data);
+    return data;
+  }
+
+  valid() {
+    const data = this.inputValue.split('\r\n').map((data) => this.parse(data));
+    if (data.length !== this.problem?.examples[0].input.length) return false;
+    for (let i = 0; i < data.length; i++) {
+      if (typeof data[i] !== typeof this.problem?.examples[0].input[i])
+        return false;
+    }
+    return true;
   }
 
   ngOnInit(): void {

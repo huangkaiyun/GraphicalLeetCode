@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProblemList } from '@core/problems';
+import { ProblemList } from '@core/datas';
 import { Problem, ProblemType } from '@core/types';
 
 @Injectable({

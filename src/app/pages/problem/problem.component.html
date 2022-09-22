@@ -24,6 +24,8 @@
       <p class="description">
         {{ "problem." + problem.id + ".description" | translate }}
       </p>
+      <nz-divider></nz-divider>
+
       <nz-radio-group
         [(ngModel)]="example"
         nzButtonStyle="solid"
@@ -35,8 +37,15 @@
           [nzValue]="ex"
           >{{ ("example" | translate) + (index + 1) }}</label
         >
+        <label nz-radio-button [nzValue]="undefined">{{
+          "customized" | translate
+        }}</label>
       </nz-radio-group>
-      <!-- <textarea rows="2" nz-input [(ngModel)]="inputValue"></textarea> -->
+      <div *ngIf="!example">
+        <textarea rows="2" nz-input [(ngModel)]="inputValue"></textarea>
+        <button nz-button nzType="primary" (click)="customize()">Submit</button>
+      </div>
+
       <div *ngIf="!!example" class="example-block">
         <div>
           <strong>Input:</strong>
@@ -49,6 +58,13 @@
           <span>{{ example.output | json }}</span>
         </div>
       </div>
+      <nz-divider></nz-divider>
+
+      <ng-template
+        #graphic
+        [graphic]="{ component: problem.component, data: example?.input }"
+        (result$)="example!.output = $event"
+      ></ng-template>
     </div>
 
     <div nz-col [nzSpan]="24" [nzSm]="12">

@@ -13,9 +13,11 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzCodeEditorModule } from 'ng-zorro-antd/code-editor';
 import { FormsModule } from '@angular/forms';
 import { LeetcodeLinkModule } from '@features/leetcode-link/leetcode-link.module';
+import { GraphicModule } from '@features/graphic/graphic.module';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 @NgModule({
   declarations: [ProblemComponent],
@@ -25,6 +27,7 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
       { path: ':id', component: ProblemComponent, canActivate: [ProblemGuard] },
       { path: '**', redirectTo: '/' },
     ]),
+    GraphicModule,
     I18nModule,
     TranslateModule,
     DifficultyModule,
@@ -38,6 +41,7 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
     NzButtonModule,
     NzInputModule,
     NzRadioModule,
+    NzDividerModule,
   ],
   exports: [RouterModule],
 })

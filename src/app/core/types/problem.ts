@@ -1,3 +1,6 @@
+import { Type } from '@angular/core';
+import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
+
 export type Problem = {
   id: number;
   leetcode: string;
@@ -5,6 +8,7 @@ export type Problem = {
   type: ProblemType;
   solutions: Record<CodeLanguage, string>;
   examples: { input: any; output: any }[];
+  component: Type<BaseGraphicComponent>;
 };
 
 export type ProblemType = 'hash-table' | 'math';
