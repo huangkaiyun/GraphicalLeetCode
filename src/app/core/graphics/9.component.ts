@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
 
 @Component({
@@ -36,7 +36,7 @@ import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
   `,
   styleUrls: ['./graphic.less'],
 })
-export class Graphic9 extends BaseGraphicComponent implements OnInit {
+export class Graphic9 extends BaseGraphicComponent {
   reverse = 0;
   x = 0;
   i = 0;
@@ -46,7 +46,7 @@ export class Graphic9 extends BaseGraphicComponent implements OnInit {
   }
 
   run() {
-    if (this.result === undefined) {
+    if (!this.hasResult) {
       if (this.x < 0 || (this.x % 10 == 0 && this.x != 0)) this.result = false;
 
       this.reverse = this.reverse * 10 + (this.x % 10);
@@ -65,10 +65,6 @@ export class Graphic9 extends BaseGraphicComponent implements OnInit {
       this.result = undefined;
       this.i = this.arr.length - 1;
     }
-  }
-
-  ngOnInit(): void {
-    this.init();
   }
 
   answer(data: any[]): any {

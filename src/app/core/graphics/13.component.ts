@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
 
 @Component({
@@ -12,7 +12,7 @@ import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
           (restart)="init()"
         ></graphic-action>
       </div>
-      <!-- <graphic-hashmap></graphic-hashmap> -->
+      <graphic-hashmap [map]="hashMap"></graphic-hashmap>
       <nz-divider></nz-divider>
       <div>str = {{ str }}</div>
       <div>sum = {{ sum }}</div>
@@ -21,7 +21,7 @@ import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
   `,
   styleUrls: ['./graphic.less'],
 })
-export class Graphic13 extends BaseGraphicComponent implements OnInit {
+export class Graphic13 extends BaseGraphicComponent {
   str = '';
   index = 0;
   hashMap = new Map<string, number>([
@@ -76,10 +76,6 @@ export class Graphic13 extends BaseGraphicComponent implements OnInit {
       this.sum = 0;
       this.symbol = [];
     }
-  }
-
-  ngOnInit(): void {
-    this.init();
   }
 
   answer(data: any[]): any {

@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 @Component({
   template: ``,
 })
-export abstract class BaseGraphicComponent {
+export abstract class BaseGraphicComponent implements OnInit {
   @Input() data?: any[];
 
   result: any = undefined;
@@ -13,4 +13,10 @@ export abstract class BaseGraphicComponent {
   }
 
   abstract answer(data: any[]): any;
+  abstract init(): any;
+  abstract run(): any;
+
+  ngOnInit(): void {
+    this.init();
+  }
 }
