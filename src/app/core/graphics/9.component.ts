@@ -6,7 +6,7 @@ import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
     <ng-container *ngIf="data">
       <div style="display: flex;justify-content: space-between;">
         <div>
-          <nz-button-group class="array">
+          <nz-button-group>
             <ng-container *ngFor="let c of arr; let index = index">
               <button nz-button *ngIf="index <= i">
                 {{ c }}
@@ -14,7 +14,7 @@ import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
             </ng-container>
           </nz-button-group>
           <nz-divider nzType="vertical"></nz-divider>
-          <nz-button-group class="array">
+          <nz-button-group>
             <ng-container *ngFor="let c of arr; let index = index">
               <button nz-button *ngIf="index > i">
                 {{ c }}
@@ -22,18 +22,11 @@ import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
             </ng-container>
           </nz-button-group>
         </div>
-        <button nz-button nzType="primary" *ngIf="!hasResult" (click)="run()">
-          Go
-        </button>
-        <button
-          nz-button
-          nzType="primary"
-          *ngIf="hasResult"
-          (click)="init()"
-          nzDanger
-        >
-          Restart
-        </button>
+        <graphic-action
+          [hasResult]="hasResult"
+          (next)="run()"
+          (restart)="init()"
+        ></graphic-action>
       </div>
       <nz-divider></nz-divider>
       <div>x = {{ x }}</div>

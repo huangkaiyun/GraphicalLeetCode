@@ -26,5 +26,9 @@
     }
   },
   "example": "Example",
-  "customized": "Customized"
+  "customized": "Customized",
+  "action": {
+    "next": "Next",
+    "restart": "Restart"
+  }
 }

@@ -5,31 +5,14 @@ import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
   template: `
     <ng-container *ngIf="data">
       <div style="display: flex;justify-content: space-between;">
-        <div>
-          <nz-button-group class="array">
-            <ng-container *ngFor="let c of arr; let i = index">
-              <button
-                nz-button
-                [ngStyle]="{ 'background-color': colors[symbol[i]] }"
-              >
-                {{ c }}
-              </button>
-            </ng-container>
-          </nz-button-group>
-        </div>
-        <button nz-button nzType="primary" *ngIf="!hasResult" (click)="run()">
-          Go
-        </button>
-        <button
-          nz-button
-          nzType="primary"
-          *ngIf="hasResult"
-          (click)="init()"
-          nzDanger
-        >
-          Restart
-        </button>
+        <graphic-array [array]="arr" [bgColor]="bgColor"></graphic-array>
+        <graphic-action
+          [hasResult]="hasResult"
+          (next)="run()"
+          (restart)="init()"
+        ></graphic-action>
       </div>
+      <!-- <graphic-hashmap></graphic-hashmap> -->
       <nz-divider></nz-divider>
       <div>str = {{ str }}</div>
       <div>sum = {{ sum }}</div>
@@ -53,6 +36,14 @@ export class Graphic13 extends BaseGraphicComponent implements OnInit {
   sum = 0;
   symbol: ('-' | '+')[] = [];
   colors = { '-': '#fc898a', '+': '#5fb2ff' };
+
+  get bgColor() {
+    const bgColor: Record<number, string> = {};
+    this.symbol.forEach((s, index) => {
+      bgColor[index] = this.colors[s];
+    });
+    return bgColor;
+  }
 
   get arr() {
     return this.data ? (this.data[0] + '').split('') : [];
