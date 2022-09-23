@@ -26,5 +26,9 @@
     }
   },
   "example": "範例",
-  "customized": "自訂"
+  "customized": "自訂",
+  "action": {
+    "next": "下一步",
+    "restart": "重新開始"
+  }
 }
