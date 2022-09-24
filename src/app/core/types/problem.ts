@@ -11,6 +11,6 @@ export type Problem = {
   component: Type<BaseGraphicComponent>;
 };
 
-export type ProblemType = 'hash-table' | 'math';
+export type ProblemType = 'hash-table' | 'math' | 'dynamic-programming';
 export type Difficulty = 'easy' | 'medium' | 'hard';
 export type CodeLanguage = 'c#' | 'typescript' | 'java';

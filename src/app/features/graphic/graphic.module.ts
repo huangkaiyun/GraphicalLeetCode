@@ -1,5 +1,5 @@
 import { TranslateModule } from '@ngx-translate/core';
-import { Graphic1, Graphic9, Graphic13 } from '@core/graphics';
+import { Graphic1, Graphic9, Graphic13, Graphic70 } from '@core/graphics';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GraphicDirective } from './graphic.directive';
@@ -10,7 +10,7 @@ import { GraphicArrayComponent } from './array/array.component';
 import { GraphicActionComponent } from './action/action.component';
 import { GraphicHashMapComponent } from './hashmap/hashmap.component';
 
-const components = [GraphicDirective, Graphic1, Graphic9, Graphic13];
+const components = [GraphicDirective, Graphic1, Graphic9, Graphic13, Graphic70];
 
 @NgModule({
   declarations: [

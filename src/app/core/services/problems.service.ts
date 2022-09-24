@@ -10,6 +10,7 @@ export class ProblemsService {
   types: { label: ProblemType; icon: string }[] = [
     { label: 'hash-table', icon: 'table' },
     { label: 'math', icon: 'number' },
+    { label: 'dynamic-programming', icon: 'play-circle' },
   ];
 
   getById(id: number) {
