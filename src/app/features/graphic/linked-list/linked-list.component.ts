@@ -29,7 +29,7 @@ export class GraphicLinkedListComponent implements OnInit {
   @Input() bgColor: Record<number, string> = {};
 
   get array() {
-    return ListNode.toArray(this.data);
+    return this.data?.toArray();
   }
 
   constructor() {}
@@ -40,22 +40,28 @@ export class GraphicLinkedListComponent implements OnInit {
 export class ListNode {
   val: number;
   next: ListNode | null;
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
 
-  static fromArray(arr: number[]) {
-    let next: ListNode | null = null;
-    for (let i = arr.length - 1; i >= 0; --i) {
-      const node: ListNode | null = new ListNode(arr[i], next);
-      next = node;
+  constructor();
+  constructor(arr: number[]);
+  constructor(val: number, next: ListNode | null);
+  constructor(...arg: any) {
+    if (arg.length === 2) {
+      this.val = arg[0];
+      this.next = arg[1];
+    } else if (arg.length === 1 && arg[0].length > 0) {
+      const arr = [...arg[0]];
+      this.val = arr[0];
+      arr.shift();
+      this.next = arr.length ? new ListNode(arr) : null;
+    } else {
+      this.val = 0;
+      this.next = null;
     }
-    return next;
   }
 
-  static toArray(head: ListNode | null): number[] {
+  toArray(): number[] {
     const arr: number[] = [];
+    let head: ListNode | null = this;
     while (head !== null) {
       arr.push(head.val);
       head = head.next;

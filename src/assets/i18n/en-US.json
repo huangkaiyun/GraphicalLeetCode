@@ -5,7 +5,7 @@
   "problem-type": {
     "hash-table": "Hash Table",
     "math": "Math",
-    "dynamic-programming": "Dynamic Programming",
+    "dynamic-programming": "DP",
     "linked-list": "Linked List"
   },
   "difficulty": {

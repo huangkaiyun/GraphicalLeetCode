@@ -45,7 +45,7 @@ export class Graphic83 extends BaseGraphicComponent {
         this.current.next = this.current.next?.next;
       } else {
         if (this.current.next === null)
-          this.result = ListNode.toArray(this.head);
+          this.result = this.head?.toArray() || [];
         this.current = this.current.next;
         this.index++;
       }
@@ -55,15 +55,15 @@ export class Graphic83 extends BaseGraphicComponent {
   init() {
     if (this.data) {
       this.index = 0;
-      this.head = ListNode.fromArray(this.arr);
+      this.head = new ListNode(this.arr);
       this.current = this.head;
       this.result = undefined;
     }
   }
 
   answer(data: any[]): any {
-    const head = ListNode.fromArray(data[0]);
-    return ListNode.toArray(this.deleteDuplicates(head));
+    const head = new ListNode(data[0]);
+    return this.deleteDuplicates(head)?.toArray() || [];
   }
 
   deleteDuplicates(head: ListNode | null): ListNode | null {
