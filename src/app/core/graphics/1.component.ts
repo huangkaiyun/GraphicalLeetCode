@@ -8,7 +8,10 @@ import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
         <div>
           <graphic-array [array]="arr" [bgColor]="bgColor"></graphic-array>
           <nz-divider nzType="vertical"></nz-divider>
-          <graphic-array [array]="[target]"></graphic-array>
+          <graphic-array
+            [array]="[target]"
+            [bgColor]="targetColor"
+          ></graphic-array>
         </div>
         <graphic-action
           [hasResult]="hasResult"
@@ -37,6 +40,10 @@ export class Graphic1 extends BaseGraphicComponent {
 
   get bgColor() {
     return { [this.index]: '#5fb2ff' };
+  }
+
+  get targetColor() {
+    return { 0: '#ddd' };
   }
 
   get key() {

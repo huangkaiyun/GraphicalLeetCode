@@ -11,6 +11,7 @@ export class ProblemsService {
     { label: 'hash-table', icon: 'table' },
     { label: 'math', icon: 'number' },
     { label: 'dynamic-programming', icon: 'play-circle' },
+    { label: 'linked-list', icon: 'link' },
   ];
 
   getById(id: number) {
