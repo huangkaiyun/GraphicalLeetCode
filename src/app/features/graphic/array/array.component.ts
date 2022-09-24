@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GraphicArrayComponent implements OnInit {
   @Input() data?: (string | number)[];
-  @Input() bgColor: Record<number, string> = { 0: '#ddd' };
+  @Input() bgColor: Record<number, string> = {};
 
   constructor() {}
 
