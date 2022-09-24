@@ -6,7 +6,8 @@
     "hash-table": "雜湊表",
     "math": "數學",
     "dynamic-programming": "動態規劃",
-    "linked-list": "連結串列"
+    "linked-list": "連結串列",
+    "two-pointers": "雙指針"
   },
   "difficulty": {
     "easy": "簡單",
@@ -33,6 +34,10 @@
     "83": {
       "title": "移除重複項",
       "description": "給定一已排序的連結串列，刪除所有重複節點，使每節點只出現一次。 回傳已排序好的連結串列。"
+    },
+    "88": {
+      "title": "合併排序數組",
+      "description": "給你兩個已排序的整數數組 nums1 和 nums2 ，請將 nums2 合併到 nums1 ，使 nums1 為一排序數組。\n\n最終的排序數組不應由函數返回，而是存儲在數組 nums1 中。\nnums1 的長度為 m + n ，後面 n 個元素為 0。\nnums2 的長度為 n"
     }
   },
   "example": "範例",

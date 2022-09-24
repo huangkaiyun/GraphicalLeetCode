@@ -6,7 +6,8 @@
     "hash-table": "Hash Table",
     "math": "Math",
     "dynamic-programming": "DP",
-    "linked-list": "Linked List"
+    "linked-list": "Linked List",
+    "two-pointers": "Two Pointers"
   },
   "difficulty": {
     "easy": "Easy",
@@ -33,6 +34,10 @@
     "83": {
       "title": "Remove Duplicates from Sorted List",
       "description": "Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well."
+    },
+    "88": {
+      "title": "Merge Sorted Array",
+      "description": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.\n\nMerge nums1 and nums2 into a single array sorted in non-decreasing order.\n\nThe final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n."
     }
   },
   "example": "Example",

@@ -12,6 +12,7 @@ export class ProblemsService {
     { label: 'math', icon: 'number' },
     { label: 'dynamic-programming', icon: 'play-circle' },
     { label: 'linked-list', icon: 'link' },
+    { label: 'two-pointers', icon: 'aim' },
   ];
 
   getById(id: number) {

@@ -15,6 +15,7 @@ export type ProblemType =
   | 'hash-table'
   | 'math'
   | 'dynamic-programming'
-  | 'linked-list';
+  | 'linked-list'
+  | 'two-pointers';
 export type Difficulty = 'easy' | 'medium' | 'hard';
 export type CodeLanguage = 'c#' | 'typescript' | 'java';
