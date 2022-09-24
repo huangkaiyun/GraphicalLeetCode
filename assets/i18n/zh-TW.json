@@ -5,7 +5,8 @@
   "problem-type": {
     "hash-table": "雜湊表",
     "math": "數學",
-    "dynamic-programming": "動態規劃"
+    "dynamic-programming": "動態規劃",
+    "linked-list": "連結串列"
   },
   "difficulty": {
     "easy": "簡單",
@@ -28,6 +29,10 @@
     "70": {
       "title": "爬樓梯",
       "description": "你正在爬樓梯，需要n階可以到達頂樓。\n 每次你可以爬 1 或 2 階，請問有多少方法可以到達頂樓？"
+    },
+    "83": {
+      "title": "移除重複項",
+      "description": "給定一已排序的連結串列，刪除所有重複節點，使每節點只出現一次。 回傳已排序好的連結串列。"
     }
   },
   "example": "範例",
