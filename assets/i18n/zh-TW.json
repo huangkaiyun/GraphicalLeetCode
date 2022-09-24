@@ -4,7 +4,8 @@
   },
   "problem-type": {
     "hash-table": "雜湊表",
-    "math": "數學"
+    "math": "數學",
+    "dynamic-programming": "動態規劃"
   },
   "difficulty": {
     "easy": "簡單",
@@ -23,6 +24,10 @@
     "13": {
       "title": "羅馬數字",
       "description": "轉換羅馬數字（I, V, X, L, C, D, M）為阿拉伯數字。"
+    },
+    "70": {
+      "title": "爬樓梯",
+      "description": "你正在爬樓梯，需要n階可以到達頂樓。\n 每次你可以爬 1 或 2 階，請問有多少方法可以到達頂樓？"
     }
   },
   "example": "範例",
