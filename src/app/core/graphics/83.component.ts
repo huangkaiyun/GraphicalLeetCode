@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
-import { ListNode } from '@features/graphic/linked-list/linked-list.component';
+import { ListNode } from '@features/graphic/linked-list';
 
 @Component({
   template: `
