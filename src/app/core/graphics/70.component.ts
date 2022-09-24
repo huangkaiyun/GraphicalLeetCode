@@ -5,7 +5,7 @@ import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
   template: `
     <ng-container *ngIf="data">
       <div style="display: flex;justify-content: space-between;">
-        <graphic-array [array]="arr" [bgColor]="bgColor"></graphic-array>
+        <graphic-array [data]="arr" [bgColor]="bgColor"></graphic-array>
         <graphic-action
           [hasResult]="hasResult"
           (next)="run()"

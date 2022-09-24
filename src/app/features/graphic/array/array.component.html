@@ -1,7 +1,10 @@
-<nz-button-group *ngIf="array">
-  <ng-container *ngFor="let char of array; let index = index">
-    <button nz-button [ngStyle]="{ 'background-color': bgColor[index] || '' }">
-      {{ char }}
-    </button>
-  </ng-container>
+<nz-button-group *ngIf="data">
+    <ng-container *ngFor="let char of data; let index = index">
+        <button
+            nz-button
+            [ngStyle]="{ 'background-color': bgColor[index] || '' }"
+        >
+            {{ char }}
+        </button>
+    </ng-container>
 </nz-button-group>

@@ -6,10 +6,10 @@ import { BaseGraphicComponent } from '@features/graphic/base-graphic.component';
     <ng-container *ngIf="data">
       <div style="display: flex;justify-content: space-between;">
         <div>
-          <graphic-array [array]="arr" [bgColor]="bgColor"></graphic-array>
+          <graphic-array [data]="arr" [bgColor]="bgColor"></graphic-array>
           <nz-divider nzType="vertical"></nz-divider>
           <graphic-array
-            [array]="[target]"
+            [data]="[target]"
             [bgColor]="targetColor"
           ></graphic-array>
         </div>

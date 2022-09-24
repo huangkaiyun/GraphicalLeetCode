@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './array.component.html',
 })
 export class GraphicArrayComponent implements OnInit {
-  @Input() array?: (string | number)[];
+  @Input() data?: (string | number)[];
   @Input() bgColor: Record<number, string> = { 0: '#ddd' };
 
   constructor() {}
