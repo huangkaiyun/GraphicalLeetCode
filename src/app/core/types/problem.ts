@@ -16,6 +16,7 @@ export type ProblemType =
   | 'math'
   | 'dynamic-programming'
   | 'linked-list'
-  | 'two-pointers';
+  | 'two-pointers'
+  | 'binary-tree';
 export type Difficulty = 'easy' | 'medium' | 'hard';
 export type CodeLanguage = 'c#' | 'typescript' | 'java';

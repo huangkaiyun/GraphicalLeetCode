@@ -6,6 +6,7 @@ import {
   Graphic70,
   Graphic83,
   Graphic88,
+  Graphic94,
 } from '@core/graphics';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,10 +15,12 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 import { GraphicArrayComponent } from './array/array.component';
 import { GraphicActionComponent } from './action/action.component';
 import { GraphicHashMapComponent } from './hashmap/hashmap.component';
 import { GraphicLinkedListComponent } from './linked-list/linked-list.component';
+import { GraphicBinaryTreeComponent } from './binary-tree';
 
 const components = [
   GraphicDirective,
@@ -27,6 +30,7 @@ const components = [
   Graphic70,
   Graphic83,
   Graphic88,
+  Graphic94,
 ];
 
 @NgModule({
@@ -35,6 +39,7 @@ const components = [
     GraphicActionComponent,
     GraphicHashMapComponent,
     GraphicLinkedListComponent,
+    GraphicBinaryTreeComponent,
     ...components,
   ],
   imports: [
@@ -44,6 +49,7 @@ const components = [
     NzDividerModule,
     NzTableModule,
     NzIconModule,
+    NzGridModule,
   ],
   exports: components,
   providers: [],

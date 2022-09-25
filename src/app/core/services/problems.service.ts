@@ -13,6 +13,7 @@ export class ProblemsService {
     { label: 'dynamic-programming', icon: 'play-circle' },
     { label: 'linked-list', icon: 'link' },
     { label: 'two-pointers', icon: 'aim' },
+    { label: 'binary-tree', icon: 'apartment' },
   ];
 
   getById(id: number) {
