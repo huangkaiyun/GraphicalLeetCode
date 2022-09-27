@@ -5,6 +5,7 @@ import { problem70 } from './70';
 import { problem83 } from './83';
 import { problem88 } from './88';
 import { problem94 } from './94';
+import { problem100 } from './100';
 
 export const ProblemList = [
   problem1,
@@ -14,4 +15,5 @@ export const ProblemList = [
   problem83,
   problem88,
   problem94,
+  problem100,
 ];

@@ -7,6 +7,7 @@ import {
   Graphic83,
   Graphic88,
   Graphic94,
+  Graphic100,
 } from '@core/graphics';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -31,6 +32,7 @@ const components = [
   Graphic83,
   Graphic88,
   Graphic94,
+  Graphic100,
 ];
 
 @NgModule({
